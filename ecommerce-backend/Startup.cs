@@ -42,7 +42,8 @@ namespace ecommerce_backend
                 endpoints.MapControllers();
             });
 
-            ApplyMigrations(app);
+            //Desabilitando migrations
+            //ApplyMigrations(app);
 
 
         }
