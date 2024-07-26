@@ -20,7 +20,8 @@ namespace ecommerce_backend.Controllers
         }
 
         [HttpGet]
-        public bool Get()
+        [AllowAnonymous]
+        public IEnumerable<Object> Get()
         {
             return _service.GetClients();
         }

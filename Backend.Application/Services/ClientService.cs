@@ -1,14 +1,24 @@
 ﻿
 
+using Backend.Application.DTO;
 using Backend.Application.Interfaces;
+using Backend.Core.Entities;
+using Backend.Core.Interfaces;
+
 
 namespace Backend.Application.Services
 {
     public class ClientService : IClientService
     {
-        public bool GetClients()
+        private readonly IClientRepository _repository;
+
+        public ClientService(IClientRepository repository) 
         {
-            return true;
+            _repository = repository;
+        }
+        public IEnumerable<ClientEntity> GetClients()
+        {
+            return _repository.GetClients();
         }
     }
 

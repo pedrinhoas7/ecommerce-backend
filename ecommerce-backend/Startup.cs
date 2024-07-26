@@ -1,9 +1,13 @@
 
 using Backend.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Backend.Domain.Connection;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using Backend.Domain.Migrations;
+using MongoDB.Driver;
 
 
 namespace ecommerce_backend 
@@ -38,10 +42,18 @@ namespace ecommerce_backend
                 endpoints.MapControllers();
             });
 
+            ApplyMigrations(app);
+
 
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            // Configuração da conexão com o MongoDB
+            services.Configure<DatabaseSettings>(
+                Configuration.GetSection(nameof(DatabaseSettings)));
+
+            services.AddSingleton<IDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
             // Configuração de autenticação
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -92,9 +104,30 @@ namespace ecommerce_backend
 
             // Adiciona os serviços MVC ou de controlador
             services.AddControllers();
+
         }
 
 
+        private void ConfigureDatabase(IServiceCollection services)
+        {
+            services.Configure<DatabaseSettings>(
+               Configuration.GetSection(nameof(DatabaseSettings)));
 
+            services.AddSingleton<IDatabaseSettings>(sp =>
+               sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
+        }
+
+        private void ApplyMigrations(IApplicationBuilder app)
+        {
+
+            var serviceProvider = app.ApplicationServices;
+            var databaseSettings = serviceProvider.GetRequiredService<IDatabaseSettings>();
+            var client = new MongoClient(databaseSettings.ConnectionString);
+            var database = client.GetDatabase(databaseSettings.DatabaseName);
+
+            var migration = new Migration();
+            migration.Down(database);
+            migration.Up(database);
+        }
     }
 }
