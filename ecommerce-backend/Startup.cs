@@ -34,6 +34,7 @@ namespace ecommerce_backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("AllowAllOrigins");
             app.UseAuthorization();
 
 
@@ -103,7 +104,17 @@ namespace ecommerce_backend
             // Configuração de autorização
             services.AddAuthorization();
 
-            // Adiciona os serviços MVC ou de controlador
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             services.AddControllers();
 
         }

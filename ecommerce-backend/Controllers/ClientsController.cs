@@ -1,4 +1,5 @@
 using Backend.Application.Interfaces;
+using Backend.Core.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace ecommerce_backend.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<Object> Get()
+        public IEnumerable<ClientEntity> Get()
         {
             return _service.GetClients();
         }
