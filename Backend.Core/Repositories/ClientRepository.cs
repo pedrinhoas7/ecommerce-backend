@@ -8,9 +8,20 @@ namespace Backend.Core.Repositories
     public class ClientRepository : NoSqlRepository<ClientEntity>, IClientRepository
     {
         public ClientRepository(IDatabaseSettings settings) : base(settings) { }
-        public IEnumerable<ClientEntity> GetClients()
+
+        public void CreateClient(ClientEntity client)
         {
-            return base.GetAll();
+            base.Save(client);
+        }
+
+        public List<ClientEntity> GetClients()
+        {
+            return base.GetAll().ToList();
+        }
+
+        public void UpdateClient(ClientEntity client)
+        {
+            base.Update(client);
         }
     }
 }

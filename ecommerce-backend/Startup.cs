@@ -100,6 +100,8 @@ namespace ecommerce_backend
         });
             });
 
+            services.AddAutoMapper(typeof(Program));
+
             services.ResolveDependencies();
             // Configuração de autorização
             services.AddAuthorization();

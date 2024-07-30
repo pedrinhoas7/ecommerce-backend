@@ -4,6 +4,8 @@ namespace Backend.Core.Interfaces
 {
     public interface IClientRepository
     {
-        IEnumerable<ClientEntity> GetClients();
+        void CreateClient(ClientEntity client);
+        List<ClientEntity> GetClients();
+        void UpdateClient(ClientEntity client);
     }
 }

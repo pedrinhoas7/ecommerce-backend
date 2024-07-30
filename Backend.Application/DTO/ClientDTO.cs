@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Backend.Application.DTO
+﻿namespace Backend.Apllication.DTO
 {
     public class ClientDTO
     {
@@ -12,5 +6,6 @@ namespace Backend.Application.DTO
         public string Email { get; set; }
         public string Phone { get; set; }
         public bool IsBlocked { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
