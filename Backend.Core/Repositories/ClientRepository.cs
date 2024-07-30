@@ -2,6 +2,7 @@
 using Backend.Core.Interfaces;
 using Backend.Domain.Base;
 using Backend.Domain.Connection;
+using System.Linq.Expressions;
 
 namespace Backend.Core.Repositories
 {
@@ -27,6 +28,11 @@ namespace Backend.Core.Repositories
         public ClientEntity GetById(string id)
         {
             return base.GetById(id);
+        }
+
+        public List<ClientEntity> Search(Expression<Func<ClientEntity, bool>> predicate)
+        {
+            return base.Search(predicate).ToList();
         }
     }
 }

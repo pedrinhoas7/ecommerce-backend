@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
+using Backend.Domain.enums;
 
 namespace Backend.Domain.Migrations
 {
@@ -16,218 +17,329 @@ namespace Backend.Domain.Migrations
             var collection = database.GetCollection<BsonDocument>("ClientEntity");
 
             var clients = new List<BsonDocument>
-            {
-                new BsonDocument
-                {
-                    { "Name", "Client 1" },
-                    { "Email", "client1@example.com" },
-                    { "Phone", "123-456-7890" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 2" },
-                    { "Email", "client2@example.com" },
-                    { "Phone", "123-456-7891" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 3" },
-                    { "Email", "client3@example.com" },
-                    { "Phone", "123-456-7892" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 4" },
-                    { "Email", "client4@example.com" },
-                    { "Phone", "123-456-7893" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 5" },
-                    { "Email", "client5@example.com" },
-                    { "Phone", "123-456-7894" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 6" },
-                    { "Email", "client6@example.com" },
-                    { "Phone", "123-456-7895" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 7" },
-                    { "Email", "client7@example.com" },
-                    { "Phone", "123-456-7896" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 8" },
-                    { "Email", "client8@example.com" },
-                    { "Phone", "123-456-7897" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 9" },
-                    { "Email", "client9@example.com" },
-                    { "Phone", "123-456-7898" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 10" },
-                    { "Email", "client10@example.com" },
-                    { "Phone", "123-456-7899" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 11" },
-                    { "Email", "client11@example.com" },
-                    { "Phone", "123-456-7900" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 12" },
-                    { "Email", "client12@example.com" },
-                    { "Phone", "123-456-7901" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 13" },
-                    { "Email", "client13@example.com" },
-                    { "Phone", "123-456-7902" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 14" },
-                    { "Email", "client14@example.com" },
-                    { "Phone", "123-456-7903" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 15" },
-                    { "Email", "client15@example.com" },
-                    { "Phone", "123-456-7904" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 16" },
-                    { "Email", "client16@example.com" },
-                    { "Phone", "123-456-7905" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 17" },
-                    { "Email", "client17@example.com" },
-                    { "Phone", "123-456-7906" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 18" },
-                    { "Email", "client18@example.com" },
-                    { "Phone", "123-456-7907" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 19" },
-                    { "Email", "client19@example.com" },
-                    { "Phone", "123-456-7908" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 20" },
-                    { "Email", "client20@example.com" },
-                    { "Phone", "123-456-7909" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                },
-                new BsonDocument
-                {
-                    { "Name", "Client 21" },
-                    { "Email", "client21@example.com" },
-                    { "Phone", "123-456-7910" },
-                    { "IsBlocked", false },
-                    { "CreationDate", DateTime.UtcNow },
-                    { "LastUpdateDate", BsonNull.Value },
-                    { "DeletedFlag", false }
-                }
-            };
+{
+    new BsonDocument
+    {
+        { "Name", "Carlos Silva" },
+        { "Email", "carlos.silva@example.com" },
+        { "Phone", "1234567890" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678900" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Masculino },
+        { "BirthDate", new DateTime(1985, 5, 15) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Ana Pereira" },
+        { "Email", "ana.pereira@example.com" },
+        { "Phone", "1234567891" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678901" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Feminino },
+        { "BirthDate", new DateTime(1990, 8, 25) }
+    },
+    new BsonDocument
+    {
+        { "Name", "João Souza" },
+        { "Email", "joao.souza@example.com" },
+        { "Phone", "1234567892" },
+        { "IsBlocked", true },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678902" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Masculino },
+        { "BirthDate", new DateTime(1978, 12, 20) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Maria Oliveira" },
+        { "Email", "maria.oliveira@example.com" },
+        { "Phone", "1234567893" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678903" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Feminino },
+        { "BirthDate", new DateTime(1995, 3, 10) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Lucas Costa" },
+        { "Email", "lucas.costa@example.com" },
+        { "Phone", "1234567894" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678904" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Masculino },
+        { "BirthDate", new DateTime(1988, 7, 18) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Juliana Lima" },
+        { "Email", "juliana.lima@example.com" },
+        { "Phone", "1234567895" },
+        { "IsBlocked", true },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678905" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Feminino },
+        { "BirthDate", new DateTime(1992, 11, 30) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Gabriel Almeida" },
+        { "Email", "gabriel.almeida@example.com" },
+        { "Phone", "1234567896" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678906" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Masculino },
+        { "BirthDate", new DateTime(1983, 9, 5) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Fernanda Souza" },
+        { "Email", "fernanda.souza@example.com" },
+        { "Phone", "1234567897" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678907" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Feminino },
+        { "BirthDate", new DateTime(1980, 2, 28) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Ricardo Ribeiro" },
+        { "Email", "ricardo.ribeiro@example.com" },
+        { "Phone", "1234567898" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678908" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Masculino },
+        { "BirthDate", new DateTime(1976, 6, 22) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Patricia Santos" },
+        { "Email", "patricia.santos@example.com" },
+        { "Phone", "1234567899" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Fisica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CPF" },
+        { "DocumentIdentifier", "12345678909" },
+        { "InscricaoEstadual", "" },
+        { "TypeGender", TypeGender.Feminino },
+        { "BirthDate", new DateTime(1993, 4, 14) }
+    },
+        new BsonDocument
+    {
+        { "Name", "Empresa Alpha" },
+        { "Email", "contato@alpha.com" },
+        { "Phone", "2345678901" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000101" },
+        { "InscricaoEstadual", "123456789" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2005, 4, 12) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Beta Corporation" },
+        { "Email", "info@betacorp.com" },
+        { "Phone", "2345678902" },
+        { "IsBlocked", true },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000202" },
+        { "InscricaoEstadual", "987654321" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2010, 8, 22) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Gamma Industries" },
+        { "Email", "contact@gammaind.com" },
+        { "Phone", "2345678903" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000303" },
+        { "InscricaoEstadual", "192837465" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2015, 3, 5) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Delta Services" },
+        { "Email", "support@deltaservices.com" },
+        { "Phone", "2345678904" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000404" },
+        { "InscricaoEstadual", "564738291" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2000, 11, 17) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Epsilon Solutions" },
+        { "Email", "sales@epsilonsolutions.com" },
+        { "Phone", "2345678905" },
+        { "IsBlocked", true },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000505" },
+        { "InscricaoEstadual", "675849302" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2008, 7, 30) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Zeta Enterprises" },
+        { "Email", "admin@zetaenterprises.com" },
+        { "Phone", "2345678906" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000606" },
+        { "InscricaoEstadual", "384756201" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2012, 1, 25) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Theta Technologies" },
+        { "Email", "info@theta-tech.com" },
+        { "Phone", "2345678907" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000707" },
+        { "InscricaoEstadual", "938475610" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2003, 9, 14) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Iota Innovations" },
+        { "Email", "contact@iotainnovations.com" },
+        { "Phone", "2345678908" },
+        { "IsBlocked", true },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000808" },
+        { "InscricaoEstadual", "182736495" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2018, 6, 10) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Kappa Logistics" },
+        { "Email", "logistics@kappa.com" },
+        { "Phone", "2345678909" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678000909" },
+        { "InscricaoEstadual", "273849501" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2006, 2, 19) }
+    },
+    new BsonDocument
+    {
+        { "Name", "Lambda Manufacturing" },
+        { "Email", "info@lambda-mfg.com" },
+        { "Phone", "2345678910" },
+        { "IsBlocked", false },
+        { "CreationDate", DateTime.UtcNow },
+        { "DeletedFlag", false },
+        { "TypeClient", TypeClient.Juridica },
+        { "Password", BsonNull.Value },
+        { "DocumentName", "CNPJ" },
+        { "DocumentIdentifier", "12345678001010" },
+        { "InscricaoEstadual", "564738291" },
+        { "TypeGender", TypeGender.Outro },
+        { "BirthDate", new DateTime(2016, 11, 29) }
+    }
+};
+
 
             collection.InsertMany(clients);
         }
