@@ -28,6 +28,14 @@ namespace ecommerce_backend.Controllers
             return _service.GetClients();
         }
 
+        [HttpGet("{id}")]
+        [AllowAnonymous]
+        public ClientDTO GetById([FromRoute] string id)
+        {
+            return _service.GetById(id);
+        }
+
+
         [HttpPost]
         [AllowAnonymous]
         public void Create(ClientDTO client)

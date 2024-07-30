@@ -39,6 +39,11 @@ namespace Backend.Application.Services
             _repository.CreateClient(mapper);
         }
 
+        public ClientDTO GetById(string id)
+        {
+            return _mapper.Map<ClientDTO>(_repository.GetById(id));
+        }
+
         public List<ClientDTO> GetClients()
         {
             var mapper = _repository.GetClients();
