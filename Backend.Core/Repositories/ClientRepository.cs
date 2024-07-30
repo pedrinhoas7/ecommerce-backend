@@ -23,5 +23,10 @@ namespace Backend.Core.Repositories
         {
             base.Update(client);
         }
+
+        public ClientEntity GetById(string id)
+        {
+            return base.GetById(id);
+        }
     }
 }

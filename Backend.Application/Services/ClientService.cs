@@ -31,9 +31,11 @@ namespace Backend.Application.Services
             return _mapper.Map<List<ClientDTO>>(mapper);
         }
 
-        public void UpdateClient(ClientDTO client)
+        public void UpdateClient(string id, ClientDTO client)
         {
             var mapper = _mapper.Map<ClientEntity>(client); 
+            var entity = _repository.GetById(id);
+            client.Id = entity.Id;
             _repository.UpdateClient(mapper);
         }
     }

@@ -7,5 +7,6 @@ namespace Backend.Core.Interfaces
         void CreateClient(ClientEntity client);
         List<ClientEntity> GetClients();
         void UpdateClient(ClientEntity client);
+        ClientEntity GetById(string id);
     }
 }

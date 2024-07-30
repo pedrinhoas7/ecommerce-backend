@@ -3,11 +3,12 @@ using Backend.Application.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Sockets;
 
 namespace ecommerce_backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ClientsController : ControllerBase
     {
@@ -34,11 +35,11 @@ namespace ecommerce_backend.Controllers
             _service.CreateClient(client);
         }
 
-        [HttpPut("/Clients/{id}")]
+        [HttpPut("{id}")]
         [AllowAnonymous]
-        public void Update([FromQuery]string id, ClientDTO client)
+        public void Update([FromRoute] string id, ClientDTO client)
         {
-           _service.UpdateClient(client);
+           _service.UpdateClient(id, client);
         }
     }
 }

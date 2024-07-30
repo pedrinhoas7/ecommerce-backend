@@ -8,6 +8,6 @@ namespace Backend.Application.Interfaces
     {
         void CreateClient(ClientDTO client);
         List<ClientDTO> GetClients();
-        void UpdateClient(ClientDTO client);
+        void UpdateClient(string id, ClientDTO client);
     }
 }
