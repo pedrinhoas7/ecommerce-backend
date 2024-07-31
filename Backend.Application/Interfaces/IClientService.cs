@@ -10,5 +10,6 @@ namespace Backend.Application.Interfaces
         ClientDTO GetById(string id);
         List<ClientDTO> GetClients();
         void UpdateClient(string id, ClientDTO client);
+        bool VerifyRegister(VerifyClientDTO search);
     }
 }

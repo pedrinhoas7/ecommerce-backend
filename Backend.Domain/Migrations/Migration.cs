@@ -22,7 +22,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Carlos Silva" },
         { "Email", "carlos.silva@example.com" },
-        { "Phone", "1234567890" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -38,7 +38,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Ana Pereira" },
         { "Email", "ana.pereira@example.com" },
-        { "Phone", "1234567891" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -54,7 +54,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "João Souza" },
         { "Email", "joao.souza@example.com" },
-        { "Phone", "1234567892" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", true },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -70,7 +70,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Maria Oliveira" },
         { "Email", "maria.oliveira@example.com" },
-        { "Phone", "1234567893" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -86,7 +86,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Lucas Costa" },
         { "Email", "lucas.costa@example.com" },
-        { "Phone", "1234567894" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -102,7 +102,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Juliana Lima" },
         { "Email", "juliana.lima@example.com" },
-        { "Phone", "1234567895" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", true },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -118,7 +118,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Gabriel Almeida" },
         { "Email", "gabriel.almeida@example.com" },
-        { "Phone", "1234567896" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -134,7 +134,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Fernanda Souza" },
         { "Email", "fernanda.souza@example.com" },
-        { "Phone", "1234567897" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -150,7 +150,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Ricardo Ribeiro" },
         { "Email", "ricardo.ribeiro@example.com" },
-        { "Phone", "1234567898" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -166,7 +166,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Patricia Santos" },
         { "Email", "patricia.santos@example.com" },
-        { "Phone", "1234567899" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -182,7 +182,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Empresa Alpha" },
         { "Email", "contato@alpha.com" },
-        { "Phone", "2345678901" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -198,7 +198,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Beta Corporation" },
         { "Email", "info@betacorp.com" },
-        { "Phone", "2345678902" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", true },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -214,7 +214,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Gamma Industries" },
         { "Email", "contact@gammaind.com" },
-        { "Phone", "2345678903" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -230,7 +230,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Delta Services" },
         { "Email", "support@deltaservices.com" },
-        { "Phone", "2345678904" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -246,7 +246,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Epsilon Solutions" },
         { "Email", "sales@epsilonsolutions.com" },
-        { "Phone", "2345678905" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", true },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -262,7 +262,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Zeta Enterprises" },
         { "Email", "admin@zetaenterprises.com" },
-        { "Phone", "2345678906" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -278,7 +278,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Theta Technologies" },
         { "Email", "info@theta-tech.com" },
-        { "Phone", "2345678907" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -294,7 +294,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Iota Innovations" },
         { "Email", "contact@iotainnovations.com" },
-        { "Phone", "2345678908" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", true },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -310,7 +310,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Kappa Logistics" },
         { "Email", "logistics@kappa.com" },
-        { "Phone", "2345678909" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },
@@ -326,7 +326,7 @@ namespace Backend.Domain.Migrations
     {
         { "Name", "Lambda Manufacturing" },
         { "Email", "info@lambda-mfg.com" },
-        { "Phone", "2345678910" },
+        { "Phone", "(83) 9 2345-8910" },
         { "IsBlocked", false },
         { "CreationDate", DateTime.UtcNow },
         { "DeletedFlag", false },

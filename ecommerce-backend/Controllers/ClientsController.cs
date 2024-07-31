@@ -36,6 +36,14 @@ namespace ecommerce_backend.Controllers
         }
 
 
+        [HttpPost("VerifyRegister")]
+        [AllowAnonymous]
+        public bool VerifyRegister(VerifyClientDTO search)
+        {
+           return _service.VerifyRegister(search);
+        }
+
+
         [HttpPost]
         [AllowAnonymous]
         public void Create(ClientDTO client)

@@ -24,17 +24,6 @@ namespace Backend.Application.Services
 
         public void CreateClient(ClientDTO client)
         {
-            Expression<Func<ClientEntity, bool>> predicate = CreatePredicateGetAll(client.Email);
-
-            var existClient = _repository.Search(predicate);
-            foreach (var clientEntity in existClient) 
-            {
-                if (clientEntity.Email == client.Email) 
-                {
-                    throw new Exception("E-mail já está vinculado a outro Comprador;");
-                }
-            }
-
             var mapper = _mapper.Map<ClientEntity>(client);
             _repository.CreateClient(mapper);
         }
@@ -58,13 +47,43 @@ namespace Backend.Application.Services
             _repository.UpdateClient(mapper);
         }
 
-        private Expression<Func<ClientEntity, bool>> CreatePredicateGetAll(string email)
+        public bool VerifyRegister(VerifyClientDTO search)
         {
-            Expression<Func<ClientEntity, bool>> predicate = entidade => 
-            entidade.Email != email && 
-            entidade.DeletedFlag == false;
-            return predicate;
+            var existRegister = false;
+
+            var predicate = CreatePredicate(search.Field, search.Value);
+            var clients = _repository.Search(predicate).ToList();
+
+            if (clients.Any())
+                existRegister = true;
+
+            return existRegister;
         }
+
+        private Expression<Func<ClientEntity, bool>> CreatePredicate(string field,string value)
+        {
+
+            if (field == "email")
+            {
+                Expression<Func<ClientEntity, bool>> search = entidade => entidade.Email == value && entidade.DeletedFlag == false;
+                return search;
+            }
+
+            if (field == "documentIdentifier")
+            {
+                Expression<Func<ClientEntity, bool>> search = entidade => entidade.DocumentIdentifier == value && entidade.DeletedFlag == false;
+                return search;
+            }
+
+            if (field == "inscricaoEstadual")
+            {
+                Expression<Func<ClientEntity, bool>> search = entidade => entidade.InscricaoEstadual == value && entidade.DeletedFlag == false;
+                return search;
+            }
+
+            throw new Exception($"Field: {field} not exist.");
+        }
+
     }
 
 
