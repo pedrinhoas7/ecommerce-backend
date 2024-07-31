@@ -24,8 +24,18 @@ namespace Backend.Application.Services
 
         public void CreateClient(ClientDTO client)
         {
-            var mapper = _mapper.Map<ClientEntity>(client);
-            _repository.CreateClient(mapper);
+            //TODO: Adicionar funcionalidade em utils
+            // Hash Password
+            client.Password = BCrypt.Net.BCrypt.HashPassword(
+                client.Password,
+                BCrypt.Net.BCrypt.GenerateSalt(10)
+                );
+
+            //Save User
+            _repository.CreateClient(
+                _mapper.Map<ClientEntity>(client)
+                );
+
         }
 
         public ClientDTO GetById(string id)
