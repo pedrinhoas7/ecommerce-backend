@@ -1,10 +1,8 @@
 ﻿using Backend.Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
-using ecommerce_backend;
+using Moq;
 
 namespace Backend.tests.Base
 {
@@ -18,6 +16,14 @@ namespace Backend.tests.Base
             server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
             client = server.CreateClient();
         }
+
+        public Mock<IClientService> GetMockClientService()
+        {
+            var mockService = new Mock<IClientService>();
+
+            return mockService;
+        }
+
 
         public IServiceProvider ServiceProvider => server.Host.Services;
 
