@@ -47,7 +47,9 @@ namespace Backend.Core.Repositories
 
         public ClientEntity GetById(string id)
         {
-            return base.GetById(id);
+            var client = base.GetById(id);
+            client.Password = null;
+            return client;
         }
 
         public List<ClientEntity> Search(Expression<Func<ClientEntity, bool>> predicate)
